@@ -1,3 +1,31 @@
+:root{
+  border-size: border-box;
+
+}
+
+
+
+html {
+  background-color: #f7f5ff;
+  color: #1c1a33;
+}
+
+header {
+  font-family: "Luckiest Guy", cursive;
+}
+
+
+
+
+
+
+section{
+
+  background-color: #FFFFFF;
+  border: 1px solid #8F8AAE;
+  
+}
+
 /* ════════════════════════════════════════════
    ADAQUIZ — style.css
 ════════════════════════════════════════════ */
@@ -6,3 +34,4 @@
 .cache {
   display: none;
 }
+
