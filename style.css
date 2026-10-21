@@ -1,23 +1,40 @@
 * {
   box-sizing: border-box;
-  background-color: #958db7;
+  background-color: #aea6d2;
   color: #1c1a33;
+  font-size: 18px;
 }
 
 body {
   display: flex;
   flex-direction: column;
+
   text-rendering: geometricPrecision;
   text-align: center;
-  font-size: 18px;
-  max-width: 375px;
-  margin: 0;
+  padding: 10px;
+  max-width: 500px;
+  margin: 0 auto;
   min-height: 100vh;
-  padding: 5px;
 }
 
 header {
-  font-family: "Luckiest Guy", cursive;
+
+ font-family: "Luckiest Guy", cursive;
+ padding: 10px;
+ border: 5px solid #264b96;
+ border-radius: 20px;
+ margin: 20px;
+ 
+ 
+}
+
+header h1{
+
+   font-size: clamp(1.3rem, 7vw, 2.5rem);
+   margin: 10px 0;
+
+
+  
 }
 
 
@@ -25,9 +42,25 @@ section {
   display: flex;
   flex: 1;
   flex-direction: column;
-  background-color: #264b96;
+  background-color: #517ed7;
   border: 1px solid #8f8aae;
   border-radius: 30px;
+  margin: 10px;
+  margin-bottom: 50px;
+  
+}
+
+img {
+ background-color: #bac5b4;
+  width: 50%;
+  height: auto;
+  padding: 8px 8px 28px;
+  border-radius: 4px;
+  margin: 30px auto;
+  box-shadow: 6px 6px 0 #030e57;
+  transform: rotate(-3deg);
+  
+
 }
 
 button {
@@ -36,7 +69,7 @@ button {
   margin-bottom: 10px;
   border-radius: 2px;
   font-family: "Fredoka", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   color: #1f2a1b;
@@ -61,6 +94,15 @@ button:active {
 }
 
 
+footer{
+  
+  font-family: "Luckiest Guy", cursive;
+  font-size: 0.8rem;
+  border: 2px solid;
+  padding:10px;
+  border-radius: 30px;
+}
+
 /* ════════════════════════════════════════════
    ADAQUIZ — style.css
 ════════════════════════════════════════════ */
@@ -69,3 +111,18 @@ button:active {
 .cache {
   display: none;
 }
+
+
+
+
+
+/*MEDIA QUERIES*/
+
+@media (min-width:768px) {
+
+
+  body{
+    max-width: 720px;
+  }
+}
+
