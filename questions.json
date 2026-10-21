@@ -40,25 +40,21 @@
     "question": "De quel pays le sushi est-il originaire ?",
     "reponses": ["La Chine", "La Thaïlande", "Le Vietnam", "Le Japon"],
     "bonne_reponse": 3
-  }
+  },
 
    {
     "id": 8,
     "question": "Quelle ville est célèbre pour ses quenelles? ",
     "reponses": ["Lille", "Nice", "Lyon", "Brest"],
     "bonne_reponse": 2
-
-
-  }
+  },
 
     {
     "id": 9,
     "question": "Quel riz est réputé pour la préparation du risotto? ",
     "reponses": ["Le riz basmati", "Le riz thaï", "Le riz arborio", "Le Riz long grain."],
     "bonne_reponse": 2
-
-
-  }
+  },
 
  {
     "id": 10,
@@ -68,14 +64,4 @@
 
 
   }
-
-
-
-
-
-
-
-
-
-
 ]
