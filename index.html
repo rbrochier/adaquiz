@@ -2,50 +2,55 @@
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-  <title>Le Gastroquizz</title>
-  <link rel="stylesheet" href="style.css">
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&display=swap" rel="stylesheet">
+     <title>GASTRONOMIQUIZZ</title>
+     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-     <Header>
-          <H1>GASTROQUIZZZZ</H1>
-     </Header>
-  <!-- ═══════════════════════════════════════
+     <header>
+          <h1>GASTRONOMIQUIZZ</h1>
+     </header>
+     <!-- ═══════════════════════════════════════
        ÉCRAN 1 — ACCUEIL
        Affiché au départ. Caché quand on clique sur "Commencer".
   ════════════════════════════════════════ -->
 
+
+     <section id="ecran-accueil" class="ecran">
+          <article>
+            
+          </article>
+          
+      <button class="btn" id="commencer" type="button">COMMENCER LA PARTIE !</button>
+     </section>
+    
   
-  <section id="ecran-accueil" class="ecran">
 
-     <button id="commencer" type="button">COMMENCER</button>
-
-  </section>
-
-  <!-- ═══════════════════════════════════════
+     <!-- ═══════════════════════════════════════
        ÉCRAN 2 — QUESTION
        Caché au départ. Affiché pendant le quiz.
   ════════════════════════════════════════ -->
-  
-  <section id="ecran-question" class="ecran cache">
-     <button id="suivant" type="button">QUESTION SUIVANTE</button>
-  </section>
 
-  <!-- ═══════════════════════════════════════
+     <section id="ecran-question" class="ecran cache">
+          <button class="btn" id="suivant" type="button">QUESTION SUIVANTE</button>
+     </section>
+
+     <!-- ═══════════════════════════════════════
        ÉCRAN 3 — RÉSULTATS
        Caché au départ. Affiché à la fin du quiz.
   ════════════════════════════════════════ -->
-  <section id="ecran-resultats" class="ecran cache">
+     <section id="ecran-resultats" class="ecran cache">
 
-     <button id="recommencer" type="button">RECOMMENCER</button>
-  </section>
+          <button class="btn" id="recommencer" type="button">RECOMMENCER</button>
+     </section>
 
-  <script src="script.js" defer></script>
+     <script src="script.js" defer></script>
 </body>
 
 </html>
