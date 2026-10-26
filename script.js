@@ -30,8 +30,8 @@ fetch('questions.json')
   .then(response => response.json())
   .then(data => {
     questions = data
-    titreQuiz.textContent = 'AdaQuiz'
-    descriptionQuiz.textContent = 'Ton quiz personnalisé'
+    titreQuiz.textContent = 'GASTRONOMIQUIZZ'
+    descriptionQuiz.textContent = 'Le Quizz sur la Gastronomie !'
     nbQuestions.textContent = questions.length + ' questions'
   })
 
@@ -66,8 +66,26 @@ const afficher = (ecran) => {
 //   6. Vider #liste-reponses, puis créer un bouton pour chaque réponse
 //      Chaque bouton doit appeler verifierReponse() au clic
 
-const afficherQuestion = () => {
-  // Écris ton code ici
+const afficherQuestion = () => { 
+  
+  {
+    const questionCourante = questions[indexCourant];
+    console.log(questionCourante);}
+  {
+
+    const progression = ((indexCourant + 1) / questions.length*100) 
+    console.log(progression);
+    
+  }
+
+  
+
+
+
+ 
+
+
+ 
 }
 
 

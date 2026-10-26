@@ -125,11 +125,19 @@ button:active {
   transform: translateY(3px);
   box-shadow: 0 3px 0 #1F2A1B;
 }
-
+progress{
+  appearance: none;
+  align-self: center;
+  margin-top: auto;
+  margin-bottom: 10px;
+  border-radius: 2px;
+  border: 1px solid #1F2A1B ;
+  background-color: rgb(141, 141, 207) ;
+}
 
 footer{
   
- font-family: "Fredoka", sans-serif;
+  font-family: "Fredoka", sans-serif;
   font-size: 0.8rem;
   border: 2px solid;
   padding:10px;

@@ -4,6 +4,8 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="questions.js" defer></script>
+     <script src="script.js" defer></script> 
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
@@ -24,6 +26,7 @@
 
 
      <section id="ecran-accueil" class="ecran">
+         
           <img src="./accueil.jpeg"
                alt="image représentant une carte de france et des plats traditionnels français autour">
           <article class="accueil">
@@ -35,8 +38,11 @@
 
           </article>
 
+          
+
           <button class="btn" id="commencer" type="button">COMMENCER LA PARTIE !</button>
      </section>
+     
 
 
 
@@ -57,7 +63,9 @@
                </ol>
           </article>
           <button class="btn" id="suivant" type="button">QUESTION SUIVANTE</button>
+          <progress id="avancement" max="10" value="0"></progress>
      </section>
+     
 
      <!-- ═══════════════════════════════════════
        ÉCRAN 3 — RÉSULTATS
