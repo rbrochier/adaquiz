@@ -68,25 +68,22 @@ const afficher = (ecran) => {
 
 const afficherQuestion = () => { 
   
-  {
+  
     const questionCourante = questions[indexCourant];
-    console.log(questionCourante);}
-  {
-
+    console.log(questionCourante);
+  
     const progression = ((indexCourant + 1) / questions.length*100) 
     console.log(progression);
-    
-  }
-
   
-
-
-
+    const compteur = indexCourant + 1;
+    console.log ("compteur", questions.length, "/10" )
+    
+    const #texte-question = questions.id.question
+    console.log(questions.question) 
  
 
-
- 
 }
+
 
 
 // ── TODO : verifierReponse ───────────────────
