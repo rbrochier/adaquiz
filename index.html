@@ -4,6 +4,8 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="questions.js" defer></script>
+     <script src="script.js" defer></script>
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
@@ -17,6 +19,7 @@
           <h1>GASTRONOMIQUIZZ</h1>
           <h2>Le Quizz sur la Gastronomie !</h2>
      </header>
+
      <!-- ═══════════════════════════════════════
        ÉCRAN 1 — ACCUEIL
        Affiché au départ. Caché quand on clique sur "Commencer".
@@ -24,6 +27,7 @@
 
 
      <section id="ecran-accueil" class="ecran">
+
           <img src="./accueil.jpeg"
                alt="image représentant une carte de france et des plats traditionnels français autour">
           <article class="accueil">
@@ -31,12 +35,10 @@
                <p>Vous allez devoir répondre à une série de questions sur la gastronomie.
                     Vous aurez le choix entre plusieurs réponses à chaque questions.
                     A la fin des 10 questions, vous pourrez recommencer !</p>
-
-
           </article>
-
-          <button class="btn" id="commencer" type="button">COMMENCER LA PARTIE !</button>
+          <button class="btn" id="btn-commencer" type="button">COMMENCER LA PARTIE !</button>
      </section>
+
 
 
 
@@ -47,17 +49,20 @@
 
      <section id="ecran-question" class="ecran cache">
           <article class="question">
-               <h3>Question 4/10</h3>
-               <h4>Quelle épice donne sa couleur jaune au curry ?</h4>
-               <ol>
+               <h3 id="compteur-questions">Question 4/10</h3>
+               <h4 id="texte-question">Quelle épice donne sa couleur jaune au curry ?</h4>
+               <ul id="liste-reponses">
                     <li>Le Paprika</li>
                     <li>La Cannelle</li>
                     <li>le Poivre Noir</li>
                     <li>Le Curcuma</li>
-               </ol>
+               </ul>
           </article>
-          <button class="btn" id="suivant" type="button">QUESTION SUIVANTE</button>
+               <button class="btn" id="btn-suivant" type="button">QUESTION SUIVANTE</button>
+
+          <progress id="avancement" max=10 value="0"></progress>
      </section>
+
 
      <!-- ═══════════════════════════════════════
        ÉCRAN 3 — RÉSULTATS
@@ -65,13 +70,13 @@
   ════════════════════════════════════════ -->
      <section id="ecran-resultats" class="ecran cache">
           <article class="resultats">
-          <p>"compteurs de réponses (n/10)"</p>
-          <p>BRAVO ! Votre Score est de 7/10</p>
+               <p id="score-final">"compteurs de réponses (n/10)"</p>
+               <p id="message-fin">BRAVO ! Votre Score est de 7/10</p>
           </article>
+                <button class="btn" id="btn-rejouer" type="button">REJOUER !</button>
 
-          <button class="btn" id="recommencer" type="button">RECOMMENCER</button>
+
      </section>
-     <script src="script.js" defer></script>
      <footer>Jeu créé par Sarah Fiaty & Richard Brochier - 2026</footer>
 </body>
 
