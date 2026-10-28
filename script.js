@@ -10,19 +10,20 @@ const ecranQuestion = document.getElementById("ecran-question");
 const compteurQuestions = document.getElementById("compteur-questions");
 const texteQuestion = document.getElementById("texte-question");
 const listeReponses = document.getElementById("liste-reponses");
+
 const barProgression = document.getElementById("avancement");
 const btnSuivant = document.getElementById("btn-suivant");
 const ecranResultats = document.getElementById("ecran-resultats");
 const scoreFinal = document.getElementById("score-final");
 const messageFin = document.getElementById("message-fin");
-const btnRejoue = document.getElementById("btn-rejouer");
+const btnRejouer = document.getElementById("btn-rejouer");
 
 // ── État du quiz ─────────────────────────────
 // Ces variables stockent les données en cours de partie.
 // Tu n'as pas besoin de les modifier.
 
 // let questions = []   // tableau des questions chargées depuis le JSON
-let indexCourant = 5; // numéro de la question en cours (commence à 0)
+let indexCourant = 0; // numéro de la question en cours (commence à 0)
 let score = 0; // nombre de bonnes réponses
 
 // ── Navigation entre les écrans ──────────────
@@ -54,12 +55,11 @@ const afficher = (ecran) => {
 //      Chaque bouton doit appeler verifierReponse() au clic
 
 const afficherQuestion = () => {
-const questionCourante = questions[indexCourant];
-
-
-
+  const questionCourante = questions[indexCourant];
   texteQuestion.textContent = questionCourante.question;
-  compteurQuestions.textContent ="Question " + (indexCourant + 1) + "/" + questions.length;
+
+  compteurQuestions.textContent =
+    "Question " + (indexCourant + 1) + "/" + questions.length;
   barProgression.value = indexCourant;
   barProgression.max = questions.length;
   btnSuivant.classList.add("cache");
@@ -80,7 +80,6 @@ const questionCourante = questions[indexCourant];
   });
 
   btnSuivant.classList.add("cache");
-
 };
 
 // ── TODO : verifierReponse ───────────────────
@@ -96,8 +95,23 @@ const questionCourante = questions[indexCourant];
 //   6. Afficher le bouton "Question suivante"
 
 const verifierReponse = (indexChoisi) => {
-  // Écris ton code ici
+  const questionCourante = questions[indexCourant];
+  btnSuivant.classList.remove("cache");
+  const boutonsReponse = document.querySelectorAll(".btn-reponse");
+  boutonsReponse.forEach((bouton) => {
+    bouton.disabled = true;
+  });
+
+  boutonsReponse[questionCourante.bonne_reponse].classList.add("correcte");
+
+  if (indexChoisi === questionCourante.bonne_reponse) {
+    score = score + 1;
+  } else {
+    boutonsReponse[indexChoisi].classList.add("incorrecte");
+  }
 };
+
+btnSuivant.classList.remove("cache");
 
 // ── TODO : afficherResultats ─────────────────
 // Cette fonction est appelée quand toutes les questions ont été répondues.
@@ -119,7 +133,23 @@ const afficherResultats = () => {
 //   - btn-suivant   → passer à la question suivante ou aux résultats
 //   - btn-rejouer   → remettre indexCourant et score à 0, revenir à l'accueil
 
-// Écris ton code ici
+btnCommencer.addEventListener("click", () => {
+  afficher(ecranQuestion);
+  afficherQuestion();
+});
 
-afficher(ecranQuestion);
-afficherQuestion();
+btnSuivant.addEventListener("click", () => {
+  indexCourant++;
+
+  if (indexCourant < questions.length) {
+    afficherQuestion();
+  } else {
+    afficherResultats();
+  }
+});
+
+btnRejouer.addEventListener("click", () => {
+  indexCourant = 0;
+  score = 0;
+  afficher(ecranAccueil);
+});
