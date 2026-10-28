@@ -1,4 +1,4 @@
-n// ════════════════════════════════════════════
+// ════════════════════════════════════════════
 //   ADAQUIZ — script.js
 //   Certaines fonctions sont déjà écrites.
 //   Les fonctions marquées TODO sont à compléter.
@@ -22,7 +22,7 @@ const btnRejoue = document.getElementById("btn-rejouer");
 // Tu n'as pas besoin de les modifier.
 
 // let questions = []   // tableau des questions chargées depuis le JSON
-let indexCourant = 5; // numéro de la question en cours (commence à 0)
+let indexCourant = 0; // numéro de la question en cours (commence à 0)
 let score = 0; // nombre de bonnes réponses
 
 // ── Navigation entre les écrans ──────────────
@@ -96,9 +96,21 @@ const questionCourante = questions[indexCourant];
 //   6. Afficher le bouton "Question suivante"
 
 const verifierReponse = (indexChoisi) => {
-  // Écris ton code ici
-};
+ const questionCourante = questions[indexCourant];
+ const boutons = listeReponses.querySelectorAll("button");
 
+   boutons.forEach((bouton) => {
+   bouton.disabled = true;
+  });
+   boutons[questionCourante.bonne_reponse].classList.add("correct");
+
+   if (indexChoisi === questionCourante.bonne_reponse) {
+    score++;
+  } else {
+    boutons[indexChoisi].classList.add("incorrect");
+  }
+  btnSuivant.classList.remove("cache");
+};
 // ── TODO : afficherResultats ─────────────────
 // Cette fonction est appelée quand toutes les questions ont été répondues.
 //
@@ -108,7 +120,16 @@ const verifierReponse = (indexChoisi) => {
 //   3. Appeler afficher(ecranResultats) pour passer à l'écran résultats
 
 const afficherResultats = () => {
-  // Écris ton code ici
+  scoreFinal.textContent = score + "/" + questions.length;
+
+  if (score === questions.length){
+    messageFin.textContent = "Parfait, bravo !";
+  } else if (score >= questions.length / 2) {
+    messageFin.textContent = "Bien joué, continue comme ça !";
+  } else {
+    messageFin.textContent = "Courage, réessaie !";
+  }
+   afficher(ecranResultats);
 };
 
 // ── TODO : écouteurs d'événements ───────────
@@ -119,7 +140,22 @@ const afficherResultats = () => {
 //   - btn-suivant   → passer à la question suivante ou aux résultats
 //   - btn-rejouer   → remettre indexCourant et score à 0, revenir à l'accueil
 
-// Écris ton code ici
+btnCommencer.addEventListener("click", () => {
+  afficher(ecranQuestion);
+  afficherQuestion();
+});
 
-afficher(ecranQuestion);
-afficherQuestion();
+btnSuivant.addEventListener("click",() => {
+  indexCourant++;
+  if (indexCourant < questions.length) {
+    afficherQuestion();
+  } else {
+    afficherResultats();
+  }
+});
+btnRejoue.addEventListener ("click", () => {
+  indexCourant = 0;
+  score = 0;
+  afficher(ecranAccueil);
+});
+

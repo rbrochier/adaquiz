@@ -20,13 +20,13 @@ const questions = [
   {
     id: 4,
     question: "Quelle épice donne sa couleur jaune au curry ? ",
-    reponse: ["Le paprika", "La cannelle", "Le poivre noir", "Le curcuma"],
+    reponses: ["Le paprika", "La cannelle", "Le poivre noir", "Le curcuma"],
     bonne_reponse: 3
   },
   {
     id: 5,
     question: "Le Kimchi, c'est:",
-    reponse: ["Une Technique d’Art Martial", "Une noix d’Amérique du Sud", "Un Personnage de Dragon Ball Z", "Une spécialité culinaire Coréenne"],
+    reponses: ["Une Technique d’Art Martial", "Une noix d’Amérique du Sud", "Un Personnage de Dragon Ball Z", "Une spécialité culinaire Coréenne"],
     bonne_reponse: 3
   },
   {
