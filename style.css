@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  background-color: #aea6d2;
+  
   color: #1c1a33;
   font-size: 18px;
 }
@@ -8,7 +8,7 @@
 body {
   display: flex;
   flex-direction: column;
-
+  background-color: #aea6d2;
   text-rendering: geometricPrecision;
   text-align: center;
   padding: 10px;
@@ -25,16 +25,12 @@ header {
  border-radius: 20px;
  margin: 20px;
  
- 
 }
 
 header h1{
 
    font-size: clamp(1.3rem, 7vw, 2.5rem);
    margin: 10px 0;
-
-
-  
 }
 
 
@@ -51,7 +47,7 @@ section {
 }
 
 img {
- background-color: #bac5b4;
+  background-color: #bac5b4;
   width: 50%;
   height: auto;
   padding: 8px 8px 28px;
@@ -60,6 +56,43 @@ img {
   box-shadow: 6px 6px 0 #030e57;
   transform: rotate(-3deg);
   
+
+}
+
+.accueil {
+
+font-family: "Fredoka", sans-serif;
+border-radius: 30px;
+margin: 10px;
+margin-bottom: 50px;
+
+}
+
+.accueil p {
+
+font-size: 1rem;
+width: 70%;
+text-align: center;
+margin: 10px auto;
+
+
+}
+
+.question {
+
+font-family: "Fredoka", sans-serif;
+border-radius: 30px;
+margin: 10px;
+margin-bottom: 50px;
+
+}
+
+.resultats{
+
+font-family: "Fredoka", sans-serif;
+border-radius: 30px;
+margin: 10px;
+margin-bottom: 50px;
 
 }
 
@@ -92,11 +125,19 @@ button:active {
   transform: translateY(3px);
   box-shadow: 0 3px 0 #1F2A1B;
 }
-
+progress{
+  appearance: none;
+  align-self: center;
+  margin-top: auto;
+  margin-bottom: 10px;
+  border-radius: 2px;
+  border: 1px solid #1F2A1B ;
+  background-color: rgb(141, 141, 207) ;
+}
 
 footer{
   
-  font-family: "Luckiest Guy", cursive;
+  font-family: "Fredoka", sans-serif;
   font-size: 0.8rem;
   border: 2px solid;
   padding:10px;
@@ -123,6 +164,16 @@ footer{
 
   body{
     max-width: 720px;
+  }
+
+
+}
+
+@media (min-width:1280px){
+
+    img{
+      width: 50%;
+
   }
 }
 
