@@ -1,4 +1,4 @@
-// ════════════════════════════════════════════
+n// ════════════════════════════════════════════
 //   ADAQUIZ — script.js
 //   Certaines fonctions sont déjà écrites.
 //   Les fonctions marquées TODO sont à compléter.
