@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  
+
   color: #1c1a33;
   font-size: 18px;
 }
@@ -18,21 +18,17 @@ body {
 }
 
 header {
-
- font-family: "Luckiest Guy", cursive;
- padding: 10px;
- border: 5px solid #264b96;
- border-radius: 20px;
- margin: 20px;
- 
+  font-family: "Luckiest Guy", cursive;
+  padding: 10px;
+  border: 5px solid #264b96;
+  border-radius: 20px;
+  margin: 20px;
 }
 
-header h1{
-
-   font-size: clamp(1.3rem, 7vw, 2.5rem);
-   margin: 10px 0;
+header h1 {
+  font-size: clamp(1.3rem, 7vw, 2.5rem);
+  margin: 10px 0;
 }
-
 
 section {
   display: flex;
@@ -41,9 +37,7 @@ section {
   background-color: #517ed7;
   border: 1px solid #8f8aae;
   border-radius: 30px;
-  margin: 10px;
   margin-bottom: 50px;
-  
 }
 
 img {
@@ -52,76 +46,88 @@ img {
   height: auto;
   padding: 8px 8px 28px;
   border-radius: 4px;
-  margin: 30px auto;
+  margin: 10px auto;
   box-shadow: 6px 6px 0 #030e57;
   transform: rotate(-3deg);
-  
-
 }
 
 .accueil {
-
-font-family: "Fredoka", sans-serif;
-border-radius: 30px;
-margin: 10px;
-margin-bottom: 50px;
-
-}
-
-.accueil p {
-
-font-size: 1rem;
-width: 70%;
-text-align: center;
-margin: 10px auto;
-
-
-}
-
-.ecran-question
-{
-  border: 1px solid #8f8aae;
+  font-family: "Fredoka", sans-serif;
   border-radius: 30px;
   margin: 10px;
   margin-bottom: 50px;
 }
 
-ul{
+.accueil p {
+  font-size: 1rem;
+  width: 70%;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.ecran-question {
+  border: 1px solid #8f8aae;
+  border-radius: 30px;
+  margin: 10px;
+
+}
+
+
+
+ul {
   list-style-type: none;
+  padding: 0;
 }
 
 .question {
-
-font-family: "Fredoka", sans-serif;
-font-size:1rem;
-font-weight: 900;
-font-size: ;
-border-radius: 30px;
-margin: 10px;
-margin-bottom: 50px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-size:;
+  border-radius: 30px;
+  margin: 10px;
+  margin-bottom: 30px;
 
 }
 
-.question h3{
-  font-size: clamp(1.3rem, 7vw, 2.5rem);
-font-weight: 900;
-  
-  
+#compteur-questions {
+  display: inline-block;
+  align-self: center;
+  padding: 14px; 
+  background-color: #030e57;
+  color: #bac5b4;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.resultats{
 
-font-family: "Fredoka", sans-serif;
-border-radius: 30px;
-margin: 10px;
-margin-bottom: 50px;
+.question h3 {
+  font-size: 1.6rem;
+  display: inline-block;
+  align-self: center;
+  padding: 16px;
+  background-color: #2f3fad;
+  color: #bac5b4;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
+.resultats {
+  font-family: "Fredoka", sans-serif;
+  border-radius: 30px;
+  margin: 3px;
+  margin-bottom: 50px;
 }
 
 button {
   align-self: center;
   margin-top: auto;
   margin-bottom: 10px;
+
   border-radius: 2px;
   font-family: "Fredoka", sans-serif;
   font-size: 1rem;
@@ -129,40 +135,49 @@ button {
   letter-spacing: 0.5px;
   color: #1f2a1b;
   background-color: #bac5b4;
-  padding: 14px 36px; 
-  border: 3px solid #030e57; 
+  padding: 10px;
+  border: 3px solid #030e57;
   border-radius: 30px;
+  width: 100%;
 }
 
-button:hover{
+button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 0 #1F2A1B;
+  box-shadow: 0 8px 0 #1f2a1b;
 }
 
 button:focus-visible {
-  outline: 3px solid #1F2A1B;
+  outline: 3px solid #1f2a1b;
   outline-offset: 6px;
 }
 button:active {
   transform: translateY(3px);
-  box-shadow: 0 3px 0 #1F2A1B;
+  box-shadow: 0 3px 0 #1f2a1b;
 }
-progress{
+progress {
+  -webkit-appearance: none;
   appearance: none;
   align-self: center;
   margin-top: auto;
   margin-bottom: 10px;
-  border-radius: 2px;
-  border: 1px solid #1F2A1B ;
-  background-color: rgb(141, 141, 207) ;
+  width:80%;
+}
+::-webkit-progress-bar {
+  background-color:#1f2a1b;
+  border-radius: 3px;
+ 
 }
 
-footer{
-  
+.avancement {
+  border: 1px solid #1f2a1b;
+  background-color: rgb(141, 141, 207);
+}
+
+footer {
   font-family: "Fredoka", sans-serif;
   font-size: 0.8rem;
   border: 2px solid;
-  padding:10px;
+  padding: 10px;
   border-radius: 30px;
 }
 
@@ -175,41 +190,24 @@ footer{
   display: none;
 }
 
-.correcte{
+.correcte {
   background-color: rgb(45, 157, 45);
 }
 
-.incorrecte{
+.incorrecte {
   background-color: rgb(219, 36, 36);
 }
 
-
-
-
 /*MEDIA QUERIES*/
 
-@media (min-width:768px) {
-
-
-  body{
+@media (min-width: 768px) {
+  body {
     max-width: 720px;
   }
-
-
 }
 
-@media (min-width:1280px){
-
-    img{
-      width: 50%;
-
+@media (min-width: 1280px) {
+  img {
+    width: 50%;
   }
-}
-
-.correct {
-  background-color: green;
-}
-
-.incorrect {
-  background-color: red;
 }
