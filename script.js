@@ -94,24 +94,8 @@ const afficherQuestion = () => {
 //   5. Si la réponse est bonne, incrémenter le score
 //   6. Afficher le bouton "Question suivante"
 
+
 const verifierReponse = (indexChoisi) => {
-// <<<<<<< fonction-quiz
- const questionCourante = questions[indexCourant];
- const boutons = listeReponses.querySelectorAll("button");
-
-   boutons.forEach((bouton) => {
-   bouton.disabled = true;
-  });
-   boutons[questionCourante.bonne_reponse].classList.add("correct");
-
-   if (indexChoisi === questionCourante.bonne_reponse) {
-    score++;
-  } else {
-    boutons[indexChoisi].classList.add("incorrect");
-  }
-  btnSuivant.classList.remove("cache");
-};
-// =======
   const questionCourante = questions[indexCourant];
   btnSuivant.classList.remove("cache");
   const boutonsReponse = document.querySelectorAll(".btn-reponse");
@@ -168,28 +152,18 @@ btnCommencer.addEventListener("click", () => {
 // <<<<<<< fonction-quiz
 btnSuivant.addEventListener("click",() => {
   indexCourant++;
-// =======
-btnSuivant.addEventListener("click", () => {
-  indexCourant++;
-
-// >>>>>>> main
   if (indexCourant < questions.length) {
     afficherQuestion();
   } else {
     afficherResultats();
   }
-});
-// <<<<<<< fonction-quiz
-btnRejoue.addEventListener ("click", () => {
-// =======
+  });
 
 btnRejouer.addEventListener("click", () => {
-//>>>>>>> main
+
   indexCourant = 0;
   score = 0;
   afficher(ecranAccueil);
 });
-// <<<<<<< fonction-quiz
 
-//=======
-// >>>>>>> main
+
