@@ -94,6 +94,7 @@ const afficherQuestion = () => {
 //   5. Si la réponse est bonne, incrémenter le score
 //   6. Afficher le bouton "Question suivante"
 
+
 const verifierReponse = (indexChoisi) => {
   const questionCourante = questions[indexCourant];
   btnSuivant.classList.remove("cache");
@@ -111,6 +112,7 @@ const verifierReponse = (indexChoisi) => {
 
 btnSuivant.classList.remove("cache");
 
+// >>>>>>> main
 // ── TODO : afficherResultats ─────────────────
 // Cette fonction est appelée quand toutes les questions ont été répondues.
 //
@@ -150,9 +152,9 @@ btnCommencer.addEventListener("click", () => {
   afficherQuestion();
 });
 
-btnSuivant.addEventListener("click", () => {
+// <<<<<<< fonction-quiz
+btnSuivant.addEventListener("click",() => {
   indexCourant++;
-
   if (indexCourant < questions.length) {
     afficherQuestion();
   } else {
@@ -168,7 +170,10 @@ btnSuivant.addEventListener("click", () => {
 });
 
 btnRejouer.addEventListener("click", () => {
+
   indexCourant = 0;
   score = 0;
   afficher(ecranAccueil);
 });
+
+
