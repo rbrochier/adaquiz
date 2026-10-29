@@ -10,12 +10,13 @@ const ecranQuestion = document.getElementById("ecran-question");
 const compteurQuestions = document.getElementById("compteur-questions");
 const texteQuestion = document.getElementById("texte-question");
 const listeReponses = document.getElementById("liste-reponses");
+
 const barProgression = document.getElementById("avancement");
 const btnSuivant = document.getElementById("btn-suivant");
 const ecranResultats = document.getElementById("ecran-resultats");
 const scoreFinal = document.getElementById("score-final");
 const messageFin = document.getElementById("message-fin");
-const btnRejoue = document.getElementById("btn-rejouer");
+const btnRejouer = document.getElementById("btn-rejouer");
 
 // ── État du quiz ─────────────────────────────
 // Ces variables stockent les données en cours de partie.
@@ -54,12 +55,11 @@ const afficher = (ecran) => {
 //      Chaque bouton doit appeler verifierReponse() au clic
 
 const afficherQuestion = () => {
-const questionCourante = questions[indexCourant];
-
-
-
+  const questionCourante = questions[indexCourant];
   texteQuestion.textContent = questionCourante.question;
-  compteurQuestions.textContent ="Question " + (indexCourant + 1) + "/" + questions.length;
+
+  compteurQuestions.textContent =
+    "Question " + (indexCourant + 1) + "/" + questions.length;
   barProgression.value = indexCourant;
   barProgression.max = questions.length;
   btnSuivant.classList.add("cache");
@@ -80,7 +80,6 @@ const questionCourante = questions[indexCourant];
   });
 
   btnSuivant.classList.add("cache");
-
 };
 
 // ── TODO : verifierReponse ───────────────────
@@ -96,6 +95,7 @@ const questionCourante = questions[indexCourant];
 //   6. Afficher le bouton "Question suivante"
 
 const verifierReponse = (indexChoisi) => {
+// <<<<<<< fonction-quiz
  const questionCourante = questions[indexCourant];
  const boutons = listeReponses.querySelectorAll("button");
 
@@ -111,6 +111,26 @@ const verifierReponse = (indexChoisi) => {
   }
   btnSuivant.classList.remove("cache");
 };
+// =======
+  const questionCourante = questions[indexCourant];
+  btnSuivant.classList.remove("cache");
+  const boutonsReponse = document.querySelectorAll(".btn-reponse");
+  boutonsReponse.forEach((bouton) => {
+    bouton.disabled = true;
+  });
+
+  boutonsReponse[questionCourante.bonne_reponse].classList.add("correcte");
+
+  if (indexChoisi === questionCourante.bonne_reponse) {
+    score = score + 1;
+  } else {
+    boutonsReponse[indexChoisi].classList.add("incorrecte");
+  }
+};
+
+btnSuivant.classList.remove("cache");
+
+// >>>>>>> main
 // ── TODO : afficherResultats ─────────────────
 // Cette fonction est appelée quand toutes les questions ont été répondues.
 //
@@ -145,17 +165,31 @@ btnCommencer.addEventListener("click", () => {
   afficherQuestion();
 });
 
+// <<<<<<< fonction-quiz
 btnSuivant.addEventListener("click",() => {
   indexCourant++;
+// =======
+btnSuivant.addEventListener("click", () => {
+  indexCourant++;
+
+// >>>>>>> main
   if (indexCourant < questions.length) {
     afficherQuestion();
   } else {
     afficherResultats();
   }
 });
+// <<<<<<< fonction-quiz
 btnRejoue.addEventListener ("click", () => {
+// =======
+
+btnRejouer.addEventListener("click", () => {
+//>>>>>>> main
   indexCourant = 0;
   score = 0;
   afficher(ecranAccueil);
 });
+// <<<<<<< fonction-quiz
 
+//=======
+// >>>>>>> main

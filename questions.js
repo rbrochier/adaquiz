@@ -32,7 +32,7 @@ const questions = [
   {
     id: 6,
     question: "Quelle région française est réputée pour son cassoulet traditionnel ? ",
-    reponses: ["La Bretagne", "Le Languedoc", "La Bourgogne", "La Normandie"],
+    reponses: ["La Bretagne", "L'Occitanie", "La Bourgogne", "La Normandie"],
     bonne_reponse: 1
   },
   {
