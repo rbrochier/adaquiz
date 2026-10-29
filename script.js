@@ -95,6 +95,23 @@ const afficherQuestion = () => {
 //   6. Afficher le bouton "Question suivante"
 
 const verifierReponse = (indexChoisi) => {
+// <<<<<<< fonction-quiz
+ const questionCourante = questions[indexCourant];
+ const boutons = listeReponses.querySelectorAll("button");
+
+   boutons.forEach((bouton) => {
+   bouton.disabled = true;
+  });
+   boutons[questionCourante.bonne_reponse].classList.add("correct");
+
+   if (indexChoisi === questionCourante.bonne_reponse) {
+    score++;
+  } else {
+    boutons[indexChoisi].classList.add("incorrect");
+  }
+  btnSuivant.classList.remove("cache");
+};
+// =======
   const questionCourante = questions[indexCourant];
   btnSuivant.classList.remove("cache");
   const boutonsReponse = document.querySelectorAll(".btn-reponse");
@@ -113,6 +130,7 @@ const verifierReponse = (indexChoisi) => {
 
 btnSuivant.classList.remove("cache");
 
+// >>>>>>> main
 // ── TODO : afficherResultats ─────────────────
 // Cette fonction est appelée quand toutes les questions ont été répondues.
 //
@@ -122,7 +140,16 @@ btnSuivant.classList.remove("cache");
 //   3. Appeler afficher(ecranResultats) pour passer à l'écran résultats
 
 const afficherResultats = () => {
-  // Écris ton code ici
+  scoreFinal.textContent = score + "/" + questions.length;
+
+  if (score === questions.length){
+    messageFin.textContent = "Parfait, bravo !";
+  } else if (score >= questions.length / 2) {
+    messageFin.textContent = "Bien joué, continue comme ça !";
+  } else {
+    messageFin.textContent = "Courage, réessaie !";
+  }
+   afficher(ecranResultats);
 };
 
 // ── TODO : écouteurs d'événements ───────────
@@ -138,18 +165,31 @@ btnCommencer.addEventListener("click", () => {
   afficherQuestion();
 });
 
+// <<<<<<< fonction-quiz
+btnSuivant.addEventListener("click",() => {
+  indexCourant++;
+// =======
 btnSuivant.addEventListener("click", () => {
   indexCourant++;
 
+// >>>>>>> main
   if (indexCourant < questions.length) {
     afficherQuestion();
   } else {
     afficherResultats();
   }
 });
+// <<<<<<< fonction-quiz
+btnRejoue.addEventListener ("click", () => {
+// =======
 
 btnRejouer.addEventListener("click", () => {
+//>>>>>>> main
   indexCourant = 0;
   score = 0;
   afficher(ecranAccueil);
 });
+// <<<<<<< fonction-quiz
+
+//=======
+// >>>>>>> main
