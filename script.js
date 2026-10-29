@@ -59,7 +59,7 @@ const afficherQuestion = () => {
   texteQuestion.textContent = questionCourante.question;
 
   compteurQuestions.textContent =
-    "Question " + (indexCourant + 1) + "/" + questions.length;
+    "QUESTION " + (indexCourant + 1) + "/" + questions.length;
   barProgression.value = indexCourant;
   barProgression.max = questions.length;
   btnSuivant.classList.add("cache");
@@ -101,9 +101,7 @@ const verifierReponse = (indexChoisi) => {
   boutonsReponse.forEach((bouton) => {
     bouton.disabled = true;
   });
-
   boutonsReponse[questionCourante.bonne_reponse].classList.add("correcte");
-
   if (indexChoisi === questionCourante.bonne_reponse) {
     score = score + 1;
   } else {
@@ -122,8 +120,19 @@ btnSuivant.classList.remove("cache");
 //   3. Appeler afficher(ecranResultats) pour passer à l'écran résultats
 
 const afficherResultats = () => {
-  // Écris ton code ici
+  scoreFinal.textContent = score + "/" + questions.length;
+
+  if (score === questions.length){
+    messageFin.textContent = "Parfait, bravo !";
+  } else if (score >= questions.length / 2) {
+    messageFin.textContent = "Bien joué, continue comme ça !";
+  } else {
+    messageFin.textContent = "Courage, réessaie !";
+  }
+   afficher(ecranResultats);
 };
+
+
 
 // ── TODO : écouteurs d'événements ───────────
 // Branche les boutons sur les bonnes fonctions.
@@ -146,6 +155,13 @@ btnSuivant.addEventListener("click", () => {
   } else {
     afficherResultats();
   }
+
+  if (indexCourant === questions.length-1) {
+    btnSuivant.textContent = "AFFICHER LES RESULTATS"
+  } else {
+    btnSuivant.textContent = "QUESTION SUIVANTE"
+  }
+
 });
 
 btnRejouer.addEventListener("click", () => {
