@@ -1,4 +1,4 @@
-n// ════════════════════════════════════════════
+// ════════════════════════════════════════════
 //   ADAQUIZ — script.js
 //   Certaines fonctions sont déjà écrites.
 //   Les fonctions marquées TODO sont à compléter.
@@ -59,7 +59,7 @@ const afficherQuestion = () => {
   texteQuestion.textContent = questionCourante.question;
 
   compteurQuestions.textContent =
-    "Question " + (indexCourant + 1) + "/" + questions.length;
+    "QUESTION " + (indexCourant + 1) + "/" + questions.length;
   barProgression.value = indexCourant;
   barProgression.max = questions.length;
   btnSuivant.classList.add("cache");
@@ -94,6 +94,7 @@ const afficherQuestion = () => {
 //   5. Si la réponse est bonne, incrémenter le score
 //   6. Afficher le bouton "Question suivante"
 
+
 const verifierReponse = (indexChoisi) => {
   const questionCourante = questions[indexCourant];
   btnSuivant.classList.remove("cache");
@@ -101,9 +102,7 @@ const verifierReponse = (indexChoisi) => {
   boutonsReponse.forEach((bouton) => {
     bouton.disabled = true;
   });
-
   boutonsReponse[questionCourante.bonne_reponse].classList.add("correcte");
-
   if (indexChoisi === questionCourante.bonne_reponse) {
     score = score + 1;
   } else {
@@ -113,6 +112,7 @@ const verifierReponse = (indexChoisi) => {
 
 btnSuivant.classList.remove("cache");
 
+// >>>>>>> main
 // ── TODO : afficherResultats ─────────────────
 // Cette fonction est appelée quand toutes les questions ont été répondues.
 //
@@ -122,8 +122,19 @@ btnSuivant.classList.remove("cache");
 //   3. Appeler afficher(ecranResultats) pour passer à l'écran résultats
 
 const afficherResultats = () => {
-  // Écris ton code ici
+  scoreFinal.textContent = score + "/" + questions.length;
+
+  if (score === questions.length){
+    messageFin.textContent = "Parfait, bravo !";
+  } else if (score >= questions.length / 2) {
+    messageFin.textContent = "Bien joué, continue comme ça !";
+  } else {
+    messageFin.textContent = "Courage, réessaie !";
+  }
+   afficher(ecranResultats);
 };
+
+
 
 // ── TODO : écouteurs d'événements ───────────
 // Branche les boutons sur les bonnes fonctions.
@@ -138,18 +149,28 @@ btnCommencer.addEventListener("click", () => {
   afficherQuestion();
 });
 
-btnSuivant.addEventListener("click", () => {
+// <<<<<<< fonction-quiz
+btnSuivant.addEventListener("click",() => {
   indexCourant++;
-
   if (indexCourant < questions.length) {
     afficherQuestion();
   } else {
     afficherResultats();
   }
+
+  if (indexCourant === questions.length-1) {
+    btnSuivant.textContent = "AFFICHER LES RESULTATS"
+  } else {
+    btnSuivant.textContent = "QUESTION SUIVANTE"
+  }
+
 });
 
 btnRejouer.addEventListener("click", () => {
+
   indexCourant = 0;
   score = 0;
   afficher(ecranAccueil);
 });
+
+
