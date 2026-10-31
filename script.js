@@ -126,8 +126,11 @@ const afficherResultats = () => {
 
   if (score === questions.length){
     messageFin.textContent = "Parfait, bravo !";
+   
+
   } else if (score >= questions.length / 2) {
     messageFin.textContent = "Bien joué, continue comme ça !";
+
   } else {
     messageFin.textContent = "Courage, réessaie !";
   }
