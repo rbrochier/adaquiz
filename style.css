@@ -6,7 +6,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #aea6d2;
-  color: #1c1a33;
+  color: #0a0a14;
   font-size: 18px;
   text-rendering: geometricPrecision;
   text-align: center;
@@ -37,7 +37,7 @@ section {
   display: flex;
   flex: 1;
   flex-direction: column;
-  background-color: #517ed7;
+  background-color:#517ed7;
   border: 1px solid #8f8aae;
   border-radius: 30px;
   margin-bottom: 10px;
@@ -216,11 +216,11 @@ footer {
 }
 
 .correcte {
-  background-color: rgb(45, 157, 45);
+  background-color: #8fd48f;
 }
 
 .incorrecte {
-  background-color: rgb(219, 36, 36);
+  background-color: #f2a0a0;
 }
 
 /*MEDIA QUERIES*/

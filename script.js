@@ -80,6 +80,7 @@ const afficherQuestion = () => {
   });
 
   btnSuivant.classList.add("cache");
+  document.querySelector(".btn-reponse").focus();
 };
 
 // ── TODO : verifierReponse ───────────────────
@@ -108,9 +109,11 @@ const verifierReponse = (indexChoisi) => {
   } else {
     boutonsReponse[indexChoisi].classList.add("incorrecte");
   }
+  btnSuivant.classList.remove("cache");
+  btnSuivant.focus();
 };
+  
 
-btnSuivant.classList.remove("cache");
 
 // >>>>>>> main
 // ── TODO : afficherResultats ─────────────────
@@ -174,6 +177,7 @@ btnRejouer.addEventListener("click", () => {
   indexCourant = 0;
   score = 0;
   afficher(ecranAccueil);
+  btnCommencer.focus();
 });
 
 
