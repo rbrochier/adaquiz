@@ -1,35 +1,38 @@
 * {
   box-sizing: border-box;
-
-  color: #0a0a14;
-  font-size: 18px;
 }
 
 body {
   display: flex;
   flex-direction: column;
   background-color: #aea6d2;
+  color: #0a0a14;
+  font-size: 18px;
   text-rendering: geometricPrecision;
   text-align: center;
-  padding: 10px;
+  padding: 8px;
   max-width: 500px;
   margin: 0 auto;
   min-height: 100vh;
+  min-height: 100dvh;
+  
 }
 
 header {
   font-family: "Luckiest Guy", cursive;
-  padding: 10px;
+  padding: 8px;
   border: 5px solid #264b96;
   border-radius: 20px;
-  margin: 20px;
+  margin: 2px;
 }
 
 header h1 {
   font-size: clamp(1.3rem, 7vw, 2.5rem);
   margin: 10px 0;
 }
-
+header h2 {
+  font-size: 0.8rem;
+}
 section {
   display: flex;
   flex: 1;
@@ -37,14 +40,15 @@ section {
   background-color:#517ed7;
   border: 1px solid #8f8aae;
   border-radius: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 img {
   background-color: #bac5b4;
-  width: 50%;
+  width: 40%;
   height: auto;
-  padding: 8px 8px 28px;
+  padding: 8px 8px 14px;
   border-radius: 4px;
   margin: 10px auto;
   box-shadow: 6px 6px 0 #030e57;
@@ -54,25 +58,37 @@ img {
 .accueil {
   font-family: "Fredoka", sans-serif;
   border-radius: 30px;
-  margin: 10px;
-  margin-bottom: 50px;
+  margin: auto 10px;
+  
+  
+}
+
+.accueil h3 {
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 0 #030e57, 4px 4px 0 rgba(3, 14, 87, 0.3);
+  color: aliceblue;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 3px;
+  
+ 
+  
 }
 
 .accueil p {
+  color: antiquewhite;
   font-size: 1rem;
-  width: 70%;
+  width: 90%;
   text-align: center;
   margin: 10px auto;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-.ecran-question {
+#ecran-question {
   border: 1px solid #8f8aae;
   border-radius: 30px;
   margin: 10px;
-
 }
-
-
 
 ul {
   list-style-type: none;
@@ -81,18 +97,16 @@ ul {
 
 .question {
   font-family: "Fredoka", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 500;
   border-radius: 30px;
   margin: 10px;
-  margin-bottom: 30px;
-
 }
 
 #compteur-questions {
   display: inline-block;
   align-self: center;
-  padding: 14px; 
+  padding: 14px;
   background-color: #030e57;
   color: #bac5b4;
   border-radius: 30px;
@@ -101,12 +115,12 @@ ul {
   letter-spacing: 0.5px;
 }
 
-
 .question h3 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   display: inline-block;
   align-self: center;
   padding: 16px;
+  margin: 10px;
   background-color: #2f3fad;
   color: #bac5b4;
   border-radius: 30px;
@@ -117,16 +131,28 @@ ul {
 
 .resultats {
   font-family: "Fredoka", sans-serif;
+  font-size: 4rem;
+  color: rgb(15, 41, 134);
+  text-align: center;
   border-radius: 30px;
   margin: 3px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
+}
+
+
+@supports (-webkit-background-clip: text) {
+  .resultats {
+    background-image: linear-gradient(90deg, #cde1dc, #b290a9);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
 }
 
 button {
   align-self: center;
   margin-top: auto;
   margin-bottom: 10px;
-
   border-radius: 2px;
   font-family: "Fredoka", sans-serif;
   font-size: 1rem;
@@ -135,7 +161,7 @@ button {
   color: #1f2a1b;
   background-color: #bac5b4;
   padding: 10px;
-  border: 3px solid #030e57;
+  border: solid #030e57;
   border-radius: 30px;
   width: 100%;
 }
@@ -159,24 +185,24 @@ progress {
   align-self: center;
   margin-top: auto;
   margin-bottom: 10px;
-  width:80%;
+  width: 80%;
 }
 ::-webkit-progress-bar {
-  background-color:#1f2a1b;
+  background-color: #1f2a1b;
   border-radius: 3px;
- 
 }
 
-.avancement {
+#avancement {
   border: 1px solid #1f2a1b;
   background-color: rgb(141, 141, 207);
+  border-radius: 30px;
 }
 
 footer {
   font-family: "Fredoka", sans-serif;
   font-size: 0.8rem;
   border: 2px solid;
-  padding: 10px;
+  padding: 3px;
   border-radius: 30px;
 }
 
@@ -203,10 +229,84 @@ footer {
   body {
     max-width: 720px;
   }
+  section {
+    justify-content: center;
+  }
+
+  header {
+    max-width: 720px;
+  }
+
+  .accueil h3 {
+    font-size: 2.5rem;
+  }
+  .accueil p {
+    margin-top: 50px;
+    font-size: 1.7rem;
+  }
+  button {
+    max-width: 450px;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  header h2 {
+    font-size: 1.3rem;
+  }
+  .question h3 {
+    max-width: 800px;
+  }
+  button {
+    margin-top: 20px;
+  }
+  progress {
+    margin-top: 50px;
+    margin-bottom: 10px;
+  }
+
+  footer {
+    font-size: 1.5rem;
+  }
 }
 
 @media (min-width: 1280px) {
-  img {
-    width: 50%;
+  body {
+    max-width: 1080px;
+  }
+  section {
+    justify-content: center;
+  }
+
+  header {
+    max-width: 1080px;
+  }
+
+  .accueil h3 {
+    font-size: 3rem;
+  }
+  .accueil p {
+    margin-top: 50px;
+    font-size: 2rem;
+  }
+  button {
+    max-width: 600px;
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+  }
+  header h2 {
+    font-size: 1.5rem;
+  }
+  .question h3 {
+    max-width: 800px;
+  }
+  button {
+    margin-top: 20px;
+  }
+  progress {
+    margin-top: 50px;
+    margin-bottom: 10px;
+  }
+
+  footer {
+    font-size: 2rem;
   }
 }

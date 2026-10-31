@@ -15,17 +15,19 @@
 </head>
 
 <body>
-    <header>
+   <header>
           <h1>GASTRONOMIQUIZZ</h1>
           <h2>Le Quizz sur la Gastronomie !</h2>
-    </header>
+   </header>
 
      <!-- ═══════════════════════════════════════
        ÉCRAN 1 — ACCUEIL
        Affiché au départ. Caché quand on clique sur "Commencer".
   ════════════════════════════════════════ -->
-    <main>
-       <section id="ecran-accueil" class="ecran">
+   
+       
+  <main>
+     <section id="ecran-accueil" class="ecran">
 
           <img src="./accueil.jpeg"
                alt="image représentant une carte de france et des plats traditionnels français autour">
@@ -36,7 +38,7 @@
                     A la fin des 10 questions, vous pourrez recommencer !</p>
           </article>
           <button class="btn" id="btn-commencer" type="button">COMMENCER LA PARTIE !</button>
-       </section>
+     </section>
 
 
 
@@ -46,7 +48,8 @@
        Caché au départ. Affiché pendant le quiz.
   ════════════════════════════════════════ -->
 
-       <section id="ecran-question" class="ecran cache">
+  
+     <section id="ecran-question" class="ecran cache">
           <img src="./accueil.jpeg"
                alt="image représentant une carte de france et des plats traditionnels français autour">
           <div class="question" id="compteur-questions"></div>
@@ -57,23 +60,25 @@
                <button class="btn" id="btn-suivant" type="button">QUESTION SUIVANTE</button>
 
           <progress id="avancement" max=10 value="0"></progress>
-       </section>
+      </section>
 
 
      <!-- ═══════════════════════════════════════
        ÉCRAN 3 — RÉSULTATS
        Caché au départ. Affiché à la fin du quiz.
   ════════════════════════════════════════ -->
-       <section id="ecran-resultats" class="ecran cache">
-          <article class="resultats">
+      
+      
+      <section id="ecran-resultats" class="ecran cache">
+           <article class="resultats">
                <p id="score-final">"compteurs de réponses (n/10)"</p>
                <p id="message-fin">BRAVO ! Votre Score est de 7/10</p>
           </article>
-                <button class="btn" id="btn-rejouer" type="button">REJOUER !</button>
+               <button class="btn" id="btn-rejouer" type="button">REJOUER !</button>
         </section>
-    </main>
+   </main>
 
-    <footer>Jeu créé par Sarah Fiaty & Richard Brochier - 2026</footer>
+   <footer>Jeu créé par Sarah Fiaty & Richard Brochier - 2026</footer>
 </body>
 
 </html>
