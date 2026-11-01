@@ -10,7 +10,7 @@ const ecranQuestion = document.getElementById("ecran-question");
 const compteurQuestions = document.getElementById("compteur-questions");
 const texteQuestion = document.getElementById("texte-question");
 const listeReponses = document.getElementById("liste-reponses");
-
+const messageReponse = document.getElementById("message-reponse");
 const barProgression = document.getElementById("avancement");
 const btnSuivant = document.getElementById("btn-suivant");
 const ecranResultats = document.getElementById("ecran-resultats");
@@ -64,7 +64,7 @@ const afficherQuestion = () => {
   barProgression.max = questions.length;
   btnSuivant.classList.add("cache");
   listeReponses.textContent = "";
-
+  messageReponse.textContent="";
   questionCourante.reponses.forEach((reponse, index) => {
     const itemReponse = document.createElement("li");
     const btn = document.createElement("button"); // créer
@@ -106,12 +106,15 @@ const verifierReponse = (indexChoisi) => {
   boutonsReponse[questionCourante.bonne_reponse].classList.add("correcte");
   if (indexChoisi === questionCourante.bonne_reponse) {
     score = score + 1;
+    messageReponse.textContent = "Bonne réponse !";
   } else {
     boutonsReponse[indexChoisi].classList.add("incorrecte");
+    messageReponse.textContent = "Mauvaise réponse !";
   }
   btnSuivant.classList.remove("cache");
   btnSuivant.focus();
 };
+
   
 
 
@@ -129,8 +132,7 @@ const afficherResultats = () => {
 
   if (score === questions.length){
     messageFin.textContent = "Parfait, bravo !";
-   
-
+  
   } else if (score >= questions.length / 2) {
     messageFin.textContent = "Bien joué, continue comme ça !";
 
