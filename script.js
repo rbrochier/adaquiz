@@ -64,7 +64,7 @@ const afficherQuestion = () => {
   barProgression.max = questions.length;
   btnSuivant.classList.add("cache");
   listeReponses.textContent = "";
-  messageReponse.textContent="";
+  messageReponse.textContent = "";
   questionCourante.reponses.forEach((reponse, index) => {
     const itemReponse = document.createElement("li");
     const btn = document.createElement("button"); // créer
@@ -95,7 +95,6 @@ const afficherQuestion = () => {
 //   5. Si la réponse est bonne, incrémenter le score
 //   6. Afficher le bouton "Question suivante"
 
-
 const verifierReponse = (indexChoisi) => {
   const questionCourante = questions[indexCourant];
   btnSuivant.classList.remove("cache");
@@ -115,9 +114,6 @@ const verifierReponse = (indexChoisi) => {
   btnSuivant.focus();
 };
 
-  
-
-
 // >>>>>>> main
 // ── TODO : afficherResultats ─────────────────
 // Cette fonction est appelée quand toutes les questions ont été répondues.
@@ -130,19 +126,15 @@ const verifierReponse = (indexChoisi) => {
 const afficherResultats = () => {
   scoreFinal.textContent = score + "/" + questions.length;
 
-  if (score === questions.length){
+  if (score === questions.length) {
     messageFin.textContent = "Parfait, bravo !";
-  
   } else if (score >= questions.length / 2) {
     messageFin.textContent = "Bien joué, continue comme ça !";
-
   } else {
     messageFin.textContent = "Courage, réessaie !";
   }
-   afficher(ecranResultats);
+  afficher(ecranResultats);
 };
-
-
 
 // ── TODO : écouteurs d'événements ───────────
 // Branche les boutons sur les bonnes fonctions.
@@ -151,14 +143,27 @@ const afficherResultats = () => {
 //   - btn-commencer → afficher l'écran question + appeler afficherQuestion()
 //   - btn-suivant   → passer à la question suivante ou aux résultats
 //   - btn-rejouer   → remettre indexCourant et score à 0, revenir à l'accueil
+  const melangerQuestions = () => { 
+    for (let i = questions.length - 1; i > 0; i-- ) {
+
+    const j = Math.floor(Math.random() * (i+1));
+
+    const temporaire = questions[i];
+    questions[i] = questions[j];
+    questions[j] = temporaire;
+     }
+
+  };
+
 
 btnCommencer.addEventListener("click", () => {
+  melangerQuestions();
   afficher(ecranQuestion);
   afficherQuestion();
 });
 
 // <<<<<<< fonction-quiz
-btnSuivant.addEventListener("click",() => {
+btnSuivant.addEventListener("click", () => {
   indexCourant++;
   if (indexCourant < questions.length) {
     afficherQuestion();
@@ -166,20 +171,16 @@ btnSuivant.addEventListener("click",() => {
     afficherResultats();
   }
 
-  if (indexCourant === questions.length-1) {
-    btnSuivant.textContent = "AFFICHER LES RESULTATS"
+  if (indexCourant === questions.length - 1) {
+    btnSuivant.textContent = "AFFICHER LES RESULTATS";
   } else {
-    btnSuivant.textContent = "QUESTION SUIVANTE"
+    btnSuivant.textContent = "QUESTION SUIVANTE";
   }
-
 });
 
 btnRejouer.addEventListener("click", () => {
-
   indexCourant = 0;
   score = 0;
   afficher(ecranAccueil);
   btnCommencer.focus();
 });
-
-

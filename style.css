@@ -20,6 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #aea6d2;
+  background-image: linear-gradient(315deg, #c40f76 0%, #cbcfd8 74%);
   color: #0a0a14;
   font-size: 18px;
   text-rendering: geometricPrecision;
@@ -31,19 +32,17 @@ body {
   min-height: 100dvh;
 }
 
-main{
+main {
   display: flex;
   flex: 1;
   flex-direction: column;
 }
 
-
-
 section {
   display: flex;
   flex: 1;
   flex-direction: column;
-  background-color:#517ed7;
+  background-color: #517ed7;
   border: 1px solid #8f8aae;
   border-radius: 30px;
   margin-bottom: 10px;
@@ -65,24 +64,20 @@ img {
   font-family: "Fredoka", sans-serif;
   border-radius: 30px;
   margin: auto 10px;
-  
-  
 }
 
 .accueil h3 {
   font-size: 1.5rem;
-  text-shadow: 2px 2px 0 #030e57, 4px 4px 0 rgba(3, 14, 87, 0.3);
+  text-shadow:
+    2px 2px 0 #030e57,
+    4px 4px 0 rgba(3, 14, 87, 0.3);
   color: aliceblue;
   font-weight: 600;
   border-radius: 30px;
   padding: 3px;
-  
- 
-  
 }
 
 .accueil p {
-  
   color: rgb(18, 16, 14);
   font-size: 1rem;
   width: 90%;
@@ -136,11 +131,9 @@ ul {
   letter-spacing: 1px;
 }
 
-#message-reponse{
+#message-reponse {
   text-transform: uppercase;
   font-size: 1.2rem;
- 
-
 }
 .resultats {
   font-family: "Fredoka", sans-serif;
@@ -151,7 +144,6 @@ ul {
   margin: 3px;
   margin-bottom: 10px;
 }
-
 
 @supports (-webkit-background-clip: text) {
   .resultats {
@@ -241,9 +233,11 @@ footer {
 @media (min-width: 768px) {
   body {
     max-width: 720px;
+ 
   }
   section {
     justify-content: center;
+  
   }
 
   header {

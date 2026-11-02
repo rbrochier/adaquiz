@@ -61,7 +61,66 @@ const questions = [
     question: "Quel dessert français est fait avec des pommes caramélisées ? ",
     reponses: ["L'Eclair", "Le Macaron", "Le Saint-Honoré", "La tarte Tatin."],
     bonne_reponse: 3
+  },
 
-
-  }
+    {
+    id: 11,
+    question: "Quel fromage est indispensable à une vraie tartiflette ?",
+    reponses: ["Le Comté", "Le Reblochon", "Le Roquefort", "Le Babybel"],
+    bonne_reponse: 1
+  },
+  {
+    id: 12,
+    question: "De quelle région française vient la choucroute ?",
+    reponses: ["L'Alsace", "La Provence", "La Corse", "La Bretagne"],
+    bonne_reponse: 0
+  },
+  {
+    id: 13,
+    question: "Quel est l'ingrédient de base du guacamole ?",
+    reponses: ["Le concombre", "La pâte à modeler", "L'avocat", "Le kiwi"],
+    bonne_reponse: 2
+  },
+  {
+    id: 14,
+    question: "La paella est une spécialité de quel pays ?",
+    reponses: ["L'Italie", "Le Portugal", "Le Mexique", "L'Espagne"],
+    bonne_reponse: 3
+  },
+  {
+    id: 15,
+    question: "Quelle ville est le berceau de la bouillabaisse ?",
+    reponses: ["Marseille", "Bordeaux", "Strasbourg", "Lille"],
+    bonne_reponse: 0
+  },
+  {
+    id: 16,
+    question: "Avec quelle céréale fabrique-t-on la semoule du couscous ?",
+    reponses: ["Le riz", "Le maïs", "Le blé dur", "Le quinoa"],
+    bonne_reponse: 2
+  },
+  {
+    id: 17,
+    question: "Le Comté est un fromage au lait de :",
+    reponses: ["Chèvre", "Brebis", "Vache", "Licorne"],
+    bonne_reponse: 2
+  },
+  {
+    id: 18,
+    question: "Quel ingrédient donne son nom à l'aïoli ?",
+    reponses: ["L'ail", "L'oignon", "L'olive", "Le citron"],
+    bonne_reponse: 0
+  },
+  {
+    id: 19,
+    question: "Quelle herbe est la base du pesto genovese ?",
+    reponses: ["La menthe", "Le basilic", "Les épinards", "Le gazon"],
+    bonne_reponse: 1
+  },
+  {
+    id: 20,
+    question: "Les canelés sont une spécialité de quelle ville ?",
+    reponses: ["Toulouse", "Bordeaux", "Nantes", "Grenoble"],
+    bonne_reponse: 1
+  },
 ]
