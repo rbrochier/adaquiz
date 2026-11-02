@@ -211,11 +211,6 @@ footer {
   border-radius: 30px;
 }
 
-/* ════════════════════════════════════════════
-   ADAQUIZ — style.css
-════════════════════════════════════════════ */
-
-/* La classe .cache masque un écran */
 .cache {
   display: none;
 }
@@ -228,16 +223,12 @@ footer {
   background-color: #f2a0a0;
 }
 
-/*MEDIA QUERIES*/
-
 @media (min-width: 768px) {
   body {
     max-width: 720px;
- 
   }
   section {
     justify-content: center;
-  
   }
 
   header {
