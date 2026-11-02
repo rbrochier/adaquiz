@@ -2,6 +2,8 @@ const questions = [
   {
     id: 1,
     question: "Quelle est la spécialité de la ville de Dijon ?",
+    visuel: ,
+    alt: ,
     reponses: ["Le Poivre", "La Moutarde", "Le Celeri", "La Cacahuete"],
     bonne_reponse: 1
   },
