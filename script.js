@@ -16,6 +16,7 @@ const btnRejouer = document.getElementById("btn-rejouer");
 
 let indexCourant = 0; 
 let score = 0; 
+const NB_QUESTIONS = 10;
 
 const afficher = (ecran) => {
   ecranAccueil.classList.add("cache");
@@ -29,9 +30,9 @@ const afficherQuestion = () => {
   texteQuestion.textContent = questionCourante.question;
 
   compteurQuestions.textContent =
-    "QUESTION " + (indexCourant + 1) + "/" + (questions.length/2);
+    "QUESTION " + (indexCourant + 1) + "/" + NB_QUESTIONS;
   barProgression.value = indexCourant;
-  barProgression.max = questions.length;
+  barProgression.max = NB_QUESTIONS;
   btnSuivant.classList.add("cache");
   listeReponses.textContent = "";
   messageReponse.textContent = "";
@@ -75,11 +76,11 @@ const verifierReponse = (indexChoisi) => {
 
 
 const afficherResultats = () => {
-  scoreFinal.textContent = score + "/" + questions.length;
+  scoreFinal.textContent = score + "/" + NB_QUESTIONS;
 
-  if (score === questions.length) {
+  if (score === NB_QUESTIONS) {
     messageFin.textContent = "Parfait, bravo !";
-  } else if (score >= questions.length / 2) {
+  } else if (score >= (NB_QUESTIONS/2)) {
     messageFin.textContent = "Bien joué, continue comme ça !";
   } else {
     messageFin.textContent = "Courage, réessaie !";
@@ -106,13 +107,13 @@ btnCommencer.addEventListener("click", () => {
 
 btnSuivant.addEventListener("click", () => {
   indexCourant++;
-  if (indexCourant < questions.length) {
+  if (indexCourant < NB_QUESTIONS) {
     afficherQuestion();
   } else {
     afficherResultats();
   }
 
-  if (indexCourant === questions.length - 1) {
+  if (indexCourant === NB_QUESTIONS - 1) {
     btnSuivant.textContent = "AFFICHER LES RESULTATS";
   } else {
     btnSuivant.textContent = "QUESTION SUIVANTE";
