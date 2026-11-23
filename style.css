@@ -132,10 +132,12 @@ ul {
 }
 
 #message-reponse {
+  font-family: inherit;
   text-transform: uppercase;
   font-size: 1.2rem;
 }
 .resultats {
+  
   font-family: "Fredoka", sans-serif;
   font-size: 4rem;
   color: rgb(15, 41, 134);
